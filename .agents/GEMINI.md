@@ -27,3 +27,5 @@ When assisting with this project, AI agents should adhere to the following rules
 *   **[2026-07-01] Authentication:** Created a basic asynchronous login endpoint in `Backend/Authentication.py` using FastAPI and `motor` (for async MongoDB connections).
 *   **[2026-07-01] Frontend Setup & UI Generation:** Created a React + Vite frontend and set up TailwindCSS (v3). Used Stitch to generate a high-fidelity Login UI, extracted the design tokens into `resources/style-guide.json`, and implemented a modular `LoginCard.tsx` component.
 *   **[2026-07-01] Documentation:** Updated the root `README.md` with a comprehensive Quick Start guide for the team.
+*   **[2026-07-01] AI Integration:** Integrated local LM Studio API (Gemma 4) via an async `httpx` client in `Backend/gemma4model.py` and `Backend/Homepage.py`. The Home UI now actively leverages the model to enhance prompts.
+*   **[2026-07-01] Testing Account:** Added instructions for creating a test account (`testing1` / `yln321`) using the backend registration endpoint to facilitate UI testing.

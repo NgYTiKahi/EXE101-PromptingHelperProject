@@ -20,7 +20,7 @@ export function LoginCard({ onLogin, onGoogleLogin }: LoginCardProps) {
     <div className="login-card w-full max-w-[420px] rounded-xl p-xl flex flex-col gap-lg">
       <div className="space-y-xs text-center">
         <h2 className="text-headline-lg font-headline-lg text-white">Welcome Back</h2>
-        <p className="text-body-md font-body-md text-on-surface-variant">Precision prompting awaits.</p>
+        <p className="text-body-md font-body-md text-gray-400">Precision prompting awaits.</p>
       </div>
 
       <form className="flex flex-col gap-md" onSubmit={handleSubmit}>
@@ -29,9 +29,9 @@ export function LoginCard({ onLogin, onGoogleLogin }: LoginCardProps) {
             Username
           </label>
           <div className="relative">
-            <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
+            <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">person</span>
             <input 
-              className="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-outline-variant" 
+              className="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-gray-500" 
               id="username" 
               placeholder="Enter your identifier" 
               type="text"
@@ -46,14 +46,14 @@ export function LoginCard({ onLogin, onGoogleLogin }: LoginCardProps) {
             <label className="text-label-sm font-label-sm text-[#9ca3af] uppercase tracking-wider" htmlFor="password">
               Password
             </label>
-            <a className="text-label-sm font-label-sm text-primary hover:text-white transition-colors" href="/forgot-password">
+            <a className="text-label-sm font-label-sm text-[#8b5cf6] hover:text-white transition-colors" href="/forgot-password">
               Forgot password?
             </a>
           </div>
           <div className="relative">
-            <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+            <span className="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">lock</span>
             <input 
-              className="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-outline-variant" 
+              className="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-gray-500" 
               id="password" 
               placeholder="••••••••" 
               type="password"
@@ -69,9 +69,9 @@ export function LoginCard({ onLogin, onGoogleLogin }: LoginCardProps) {
       </form>
 
       <div className="flex items-center gap-md py-xs">
-        <div className="h-[1px] flex-grow bg-surface-variant"></div>
-        <span className="text-label-sm font-label-sm text-outline-variant">OR</span>
-        <div className="h-[1px] flex-grow bg-surface-variant"></div>
+        <div className="h-[1px] flex-grow bg-[#2D3748]"></div>
+        <span className="text-label-sm font-label-sm text-gray-400">OR</span>
+        <div className="h-[1px] flex-grow bg-[#2D3748]"></div>
       </div>
 
       <button onClick={onGoogleLogin} type="button" className="secondary-button w-full py-md rounded-lg text-white font-label-md text-label-md flex items-center justify-center gap-md group">
@@ -84,10 +84,10 @@ export function LoginCard({ onLogin, onGoogleLogin }: LoginCardProps) {
         <span>Continue with Google</span>
       </button>
 
-      <div className="text-center pt-md border-t border-surface-variant/30">
-        <p className="text-body-md font-body-md text-on-surface-variant">
+      <div className="text-center pt-md border-t border-[#2D3748]">
+        <p className="text-body-md font-body-md text-gray-400">
           Don't have an account? 
-          <a className="text-primary hover:underline ml-xs" href="/signup">Sign up</a>
+          <a className="text-[#8b5cf6] hover:underline ml-xs" href="/signup">Sign up</a>
         </p>
       </div>
     </div>

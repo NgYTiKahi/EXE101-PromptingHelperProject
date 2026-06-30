@@ -1,262 +1,233 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Login | Prompt Helper</title>
-<!-- Tailwind CSS -->
+<title>Login | Mastery Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Geist & JetBrains Mono -->
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Theme Configuration -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "primary-fixed": "#e9ddff",
-                "on-primary": "#3c0091",
-                "on-background": "#dfe2f1",
-                "on-tertiary-fixed-variant": "#673d00",
-                "secondary-fixed": "#dde2f3",
-                "surface-container-low": "#171b26",
-                "surface-container-high": "#262a35",
-                "error-container": "#93000a",
-                "surface-variant": "#313540",
-                "surface-container-highest": "#313540",
-                "secondary-fixed-dim": "#c1c6d7",
-                "on-secondary-fixed": "#161c27",
-                "on-primary-fixed-variant": "#5516be",
-                "on-error": "#690005",
-                "tertiary-fixed-dim": "#ffb869",
-                "background": "#0f131d",
-                "inverse-primary": "#6d3bd7",
-                "on-secondary-container": "#b3b8c8",
-                "primary-fixed-dim": "#d0bcff",
-                "tertiary-container": "#ca801e",
-                "on-tertiary-fixed": "#2c1700",
-                "surface-dim": "#0f131d",
-                "error": "#ffb4ab",
-                "on-primary-fixed": "#23005c",
-                "surface-container-lowest": "#0a0e18",
-                "inverse-on-surface": "#2c303b",
-                "inverse-surface": "#dfe2f1",
-                "on-error-container": "#ffdad6",
-                "outline-variant": "#494454",
-                "on-surface": "#dfe2f1",
-                "tertiary": "#ffb869",
-                "primary": "#d0bcff",
-                "surface-bright": "#353944",
-                "on-surface-variant": "#cbc3d7",
-                "on-secondary-fixed-variant": "#414754",
-                "surface": "#0f131d",
-                "secondary-container": "#434957",
-                "primary-container": "#a078ff",
-                "on-primary-container": "#340080",
-                "on-secondary": "#2a303d",
-                "on-tertiary-container": "#3f2300",
-                "tertiary-fixed": "#ffdcbb",
-                "outline": "#958ea0",
-                "secondary": "#c1c6d7",
-                "surface-tint": "#d0bcff",
-                "on-tertiary": "#482900",
-                "surface-container": "#1c1f2a"
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#151b26",
+                        "on-primary-fixed": "#161c27",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#dcd9da",
+                        "on-tertiary-fixed": "#241a0a",
+                        "primary-fixed-dim": "#c1c6d6",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8f9",
+                        "on-tertiary-container": "#a5957d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#9ff5c1",
+                        "on-primary": "#ffffff",
+                        "secondary": "#0a6c44",
+                        "tertiary-fixed-dim": "#d6c4aa",
+                        "on-secondary-fixed-variant": "#005231",
+                        "inverse-on-surface": "#f3f0f1",
+                        "on-secondary-container": "#167249",
+                        "background": "#fcf8f9",
+                        "surface-container-low": "#f6f3f4",
+                        "surface-container-highest": "#e5e2e3",
+                        "primary-container": "#2a303c",
+                        "surface-bright": "#fcf8f9",
+                        "on-primary-container": "#9298a6",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#313031",
+                        "tertiary-fixed": "#f3e0c5",
+                        "surface-container-high": "#eae7e8",
+                        "surface-container": "#f0edee",
+                        "surface-tint": "#585e6c",
+                        "inverse-primary": "#c1c6d6",
+                        "outline-variant": "#c6c6cc",
+                        "on-surface": "#1b1b1c",
+                        "tertiary": "#231909",
+                        "primary-fixed": "#dde2f2",
+                        "surface-variant": "#e5e2e3",
+                        "on-secondary-fixed": "#002111",
+                        "tertiary-container": "#392e1c",
+                        "on-primary-fixed-variant": "#414754",
+                        "on-surface-variant": "#45474c",
+                        "on-tertiary-fixed-variant": "#514531",
+                        "on-background": "#1b1b1c",
+                        "outline": "#76777c",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#9ff5c1",
+                        "secondary-fixed-dim": "#83d8a6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "sidebar-width": "280px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "display-logo": ["Noto Serif"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-logo": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
             },
-            "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-            },
-            "spacing": {
-                "3xl": "64px",
-                "xs": "8px",
-                "2xl": "48px",
-                "base": "4px",
-                "sm": "12px",
-                "xl": "32px",
-                "md": "16px",
-                "lg": "24px"
-            },
-            "fontFamily": {
-                "headline-md": ["Geist"],
-                "headline-lg": ["Geist"],
-                "body-lg": ["Geist"],
-                "display-lg": ["Geist"],
-                "label-md": ["JetBrains Mono"],
-                "label-sm": ["JetBrains Mono"],
-                "headline-lg-mobile": ["Geist"],
-                "body-md": ["Geist"]
-            },
-            "fontSize": {
-                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
-                "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
-                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
+        }
     </script>
 <style>
-        body {
-            background-color: #0b0f19; /* Deep Space Base per Brand Anchors */
-            font-family: 'Geist', sans-serif;
-            color: #dfe2f1;
-        }
-        
-        .login-card {
-            background-color: #1a202c; /* Midnight Gray per Form Card requirement */
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.15); /* Subtle Neon Violet Glow */
-            border: 1px solid #2d3748;
-        }
-
-        .input-field {
-            background-color: #1a202c;
-            border: 1px solid #2d3748;
-            transition: all 0.2s ease;
-        }
-
-        .input-field:focus {
-            outline: none;
-            border-color: #8b5cf6;
-            box-shadow: inset 0 0 4px rgba(139, 92, 246, 0.2);
-        }
-
-        .primary-button {
-            background-color: #8b5cf6; /* Neon Violet */
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .primary-button:hover {
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-            filter: brightness(1.1);
-            transform: translateY(-1px);
-        }
-
-        .secondary-button {
-            background-color: transparent;
-            border: 1px solid #2d3748;
-            transition: background-color 0.2s ease;
-        }
-
-        .secondary-button:hover {
-            background-color: #2d3748;
-        }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
             vertical-align: middle;
+        }
+        .pagination-dot {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .active-dot {
+            width: 24px;
+            background-color: #2d3748;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(42, 48, 60, 0.1);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-primary/30">
-<!-- Top Navigation (Shell logic: Minimal TopAppBar) -->
-<header class="flex justify-center items-center w-full py-xl px-md">
-<h1 class="text-headline-md font-headline-md font-bold text-on-background tracking-tight">
-            Prompt Helper
-        </h1>
-</header>
-<!-- Main Content Canvas -->
-<main class="flex-grow flex items-center justify-center px-md pb-3xl">
-<div class="login-card w-full max-w-[420px] rounded-xl p-xl flex flex-col gap-lg">
-<!-- Welcome Header -->
-<div class="space-y-xs text-center">
-<h2 class="text-headline-lg font-headline-lg text-white">Welcome Back</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Precision prompting awaits.</p>
+<body class="bg-surface-container-lowest font-body-md text-on-surface antialiased overflow-hidden">
+<main class="flex min-h-screen w-full flex-col md:flex-row">
+<!-- Left Column: Branding & Illustration -->
+<section class="hidden md:flex w-1/2 bg-[#e9f5e9] flex-col justify-center items-center p-xl relative overflow-hidden">
+<!-- Atmospheric micro-interaction element -->
+<div class="absolute inset-0 pointer-events-none opacity-20" id="floaty-elements"></div>
+<div class="max-w-md text-center z-10">
+<div class="mb-lg transition-transform duration-700 hover:scale-105">
+<img alt="Exam Mastery Hub Illustration" class="w-full h-auto drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8ozSmekNQNDLUsS3RTqWCXVq68pvd0_oeFe0u7BC765aJ1PEjl7jedfPGzOivVlUukxWODgeG39n8Ue2lML9n_u3MMMoQOxkGRBWyFiDIIwaWIBeLNhWqv1GqUmfQUyimKN8EAlri8yn7Fk9NYeznKeT9lKCKdXHNLRzsuCRe8Id8pC89lJNrlCkfU2g9z8cyhc-d_OZE5-OwwYHhks4euXFHmbqTa75-UlcoM9K_B7IUigMK-oD15N0J06TO8DzQHs95BL-OCEQ"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-[#2d3748] mb-sm">
+                    Exam Mastery Hub
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mx-auto mb-lg leading-relaxed">
+                    Unleash Your Academic Success with Exam Mastery Hub's Exam Excellence Platform
+                </p>
+<!-- Pagination Dots -->
+<div class="flex justify-center items-center gap-xs">
+<div class="pagination-dot w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="pagination-dot active-dot h-2 rounded-full"></div>
+<div class="pagination-dot w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="pagination-dot w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</section>
+<!-- Right Column: Login Form -->
+<section class="w-full md:w-1/2 flex flex-col justify-center items-center p-gutter bg-surface-container-lowest">
+<div class="w-full max-w-[360px] flex flex-col items-center">
+<!-- Logo -->
+<div class="mb-xl">
+<img alt="Exam Mastery Hub Logo" class="h-10 w-auto" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAABQCAYAAAA0u++hAAAQAElEQVR4Aex9C3xbxZX3OSPJTgKE96MQWCghtkQiKckHIZbSpvsV2qWFAktI4pTn8mzLqw8KsQmmiZMWdim0UNrClgKLHUi7pBS27fYVEskmoRBJTiU7CWkKtCU8QiAJSWzpnj1zZdl6zNXDtmw5Gf3u3DtzzpkzZ/4z99y5c+deCdA/jYBGQCOgEahIBLSDrshm0UZpBDQCGgEA7aB1L9AIaARGJwIHgNXaQR8AjayrqBHQCIxOBLSDHp3tpq3WCGgEDgAEtIM+ABpZV/FAREDXeX9AQDvo/aEVdR00AhqB/RIB7aD3y2bVldIIaAT2BwS0g94fWlHXoVQEtLxGYFQgoB30qGgmbaRGQCNwICKgHfSB2Oq6zhoBjcCoQEA76FHRTMNrpC5NI6ARqAwEtIOujHbQVmgENAIagRwEtIPOgUQTNAIaAY1AZSCgHXSp7aDlNQIaAY3AMCGgHfQwAa2L0QhoBDQCpSIwYg66duqsTzq9/j/KIOOlGq7lNQIaAY3A/o7AEDvownBJZyydsiBahQCzZZBxSZM80D+NgEZAI6ARMBEYNgctna90wtIZS6dslp62kzTJkzJSNo2loxoBjYBG4IBEoOwOWjpb6XSl85VOuBDKUkbKyjwybyF5zdcIaAQ0AkOBQCXqKJuDls5VOlnpbKXTLbXyMo/MK3VIXaXm1/IaAY2ARmC0IzDkDlo6U+lUpXOVTnawAEkdUpfUKXUPVp/OrxHQCGgERgsCQ+agpfOUTlQ6U+lUhxoAqVPqlmXIsoZav9anEdAI5EFAs0YEgUE7aOkspdOUzlM60XLXQpYhy5JlyrLLXZ7WrxHQCGgERgqBATto6Rylk5TOUjrN4a6ALFOWLW2Qtgx3+bo8jYBGQCNQbgRKdtDSGUqnKJ2jdJLlNrCQfmmDtEXaJG0rJK/5GoGhR0Br1AiUB4GiHbR0ftIJSmconWJ5zBm4VmmTtE3aKG0duCadUyOgEdAIVAYCBR20dHbS6UnnJ51gZZhtbYW0UdoqbZa2W0tqjkZAI6ARqGwECjroyjbf2rqUo3Z5/SSDtaTmlBkBrV4joBEYIAIFHXTn+jUvxkKBTxmIswlgFVT4T9oobR0uMyd5Zp7g8vjuLibUen2XD9Qul9t/UzFlSJmBlnHK5BnHOj2+3ww0v1W+GrfvfJfH/xOnx7fa6fW96/L4d7m8vk18/J3L67/L5fKdlMpbM3mW2+n1fTeVTh1r3P7PyrqVKzin1v2TLMvlqfuiq8j2LEnO7Zsl9aeHkvKzTbUe3yKn13+zy1N3pdPjv9Dl8flP9noPS9dpFWesv8byRfXTXrnrrHRJumvWJxdNueGC1VZhcsMlD7iX1DdnB0/z/C/K/N6lC3zZvGLSpy+be8aE++aMLUY2W8aztP4iWXZ6cDfX35Utl5P+zoIJU5fOOTqHrqhfhkzz/CVTlsy/bcriede4l867mMMsV9Ocg6GEX0EHndJV6Y465ZjlxUTamrK73EfcKz4khAAgGmzDXD4usgoC8KeTJk0/qlSbJk2ZWQsCHgBES92AcAbb8X5iEBfRMXb71xDxnNMmn+Us1UaVfG3tmUeyQ2mxCfwF23clIh7Jci9w+CEBbmXadI43kQP+4vL6n3F6Z15gs9OdQOBgesZmQzgb8tY/HzaFeZhA8yKRSNgiCaIOADyIEG8YsjIB/JD1SxC8wqR/AOCJxZQjEO9GgPsBxU8Q4b85z5pxcPD7Tq/vbxJns5+A+keYeI05hxPCLZzPsh8RQI2BsCWRMG0Dqx8RdNDbe7Yau3omwiH2WWLCuIxgG2e/iW1cmAx0KwCdwGFDPGEwtgDdovsNLmsd8w9FoGv52CsLOUfOdykgVfPxJXvC+PubH77TI+OA8Dbb5y+Q9xxCeFfKJxKJGMtnbAYQ02gc6z8/XQ8LXc1Yj0cw/vTRHvgw4RjzkYEUZj3vcJiWLmsZB2zgNvuOEOLHSGIFh9UOh2Onp3l+l6e5/pvQNNvO5eTdRF6ugimdX6yCRtTcyKsMHt1Lm6RtCpPLSurqCu6MhYK/jYYCd2+nndO5476ar0AxdszV6fxi4kLYbsgrR/T9aCh4Lttxf1c4+Me8shbMCRNmjgWC6yXbbrN/XR4HE2qm+o7HMVUd3MnnE/8MMK6MhgKT2cbLo+HA12OhwNmcPoLb7yvcwfdyWXMQbM8CwMV84vHJyDHrLc4qFwMlpnUjHsN6UAY+caQTysnFsotMfvf26jgYZ/KV9DoCas8RZELXhjWRrkjbz6SNBIkLmKTcyDC+JHXK8NEO+1hOT4EEnSvrw7qf4ExxDnm3rkjwuWg4+MNoOHAVC67gkLOxrr/KMmRI7KHxbHsNJeBspv8pJYyAxyPAfLvNFnN6/T9gOid5n7bFQu0ro+HgTUy6mPFgMzmm2EiIhztDwce7NgT79CvEIBZ48dkNP//NZfF1O2oSv3sLjHf3qcSSNBSXRBpbr+DQ+udFT7OTA4jevuL1jsaWX4QbWr6CNjqDDdqZFM7c8/n0NkJ8ZqSh9euc/5fhxhV/g6ZVcRmPNLQ8sH1cz2elTGauZIox2hePxz/T0dDyXSm/4c6n2Rknean9hobWZ5h3a7wnLgcLQZNO8CFCz7RwY8uN4cblz25ueurDyDee3N0re38kXvM51r3BlM3Z0Qt7euhoSBjTGOfzgegult2WKYaTOP1tj/1jf/r4t+ccynHLrWQHndIknSGfZCM29cENOqKOOYVD+nFbJLKbr8SrJY2IXpLH7CAAv5xNK5QWCJdxJ5TOSynKZbUpGSUQDzlKXIeIh/RmWSBHv73xAR2EAY+xl/hYMjPe0xlq+ynHudl4378R96GH9sVttQAU6idDzgg6xSOABBjgj4WDi6Lh9vWb16/hEU2Km/8YjUa7N4baXu4MB34cCwV9fOLcny9HZ6hd2YbZebZuXbU3FmnbEO0I/ioWCjwUCwUvp308Iif4fbasVdogMvuNFV/Su3gwwLZvjHUEfhcLOWYyFg9LenpgzG9w8d0I0wSHnI1t+y0TLestDONfmV/85hCncHsAvbdvh0WmnvDCp5634Jnk0B3LtyJBjvM0mQivmE7ZTOTu3vzqij18QV+fyzEpm6JNK7absQI7luvmi5+JJyE8n69MaGoygDBgpXJjU+u74UXL17Pj5wtK67dEzx7u35Dev8H8IXoOidtXAnENTELuTtmIuWLWlJFy1DEexcuyrS0bGQ53tA+TJaMcySSj6XuECXwCzUkn5YvXeuuuYf5hBhkP8lG9CZIjUDWvOKrgTtI3akaEaqh2lHwhSRXl9PpuQZ4qSaXJSDyViquOr21Y/YYBiQuZlzzJCS1H0GjQndFIYC3LDnbji0PwVgJ4MY8iPhGpOw/fkhWLrflHNBw4h4AKOl6pBAl7+41MFRNWxWO2PTdzu21RSF/sdPvNuV4FD4y9cBfXW3lhI8Br5N2PKp+KJuzGlSb9MIdyAEEAReHHOO0y9WTtEGhfFikniTzizSEmCbuTh+L2NoFbk5L01+TReo8IH1hzMzmhppU7UBgXch0Zjkwe8N2/e9k8y4uiyBIfcFI6S+k0DS6QrRiah4kDtmbkMnLdzVvbWDjwJJ88byktIco/ZZGWSQB+iUfPa/eQWJ9GzogaBo9XMyilJZzuuksQkecI+/MJAHbQhefI+nP0x9DM258mTChPvn4JgM7QS1u5Ay+QNESwy2N2YP5fo5Hgd7Lpg0onYEm+/MS3RPn4BXgGGnhbARmTjTiAi+wrr/QYAEo8UNBiVszNyPusTY7ECYyGLLKZZOzHcG+600wU2PHD3xqzrYl+iceONeeWs7Ow80xk05RpRJ5XzuVw3y+Yn3g+IjcnAAKa5yIU+euJx81+yvn2FMpiEBW8cKTrkHcJAPgHUP0McaOKLGnKBpSMgYahdtQEYE5lDNSe4c/HXTJVKMKPUtGMI+KnXB7f6Rk0RcLl9s8AQC8hmbdeUK6fEHfkqOa53Vpvt+UoLEe+l+ByuaoAcCKk/QQ6kqOsNJoqGgsF/weI/shBOYJmZJ/jfOyTeD9Em5wusLyQll6GcLp9Gc8YouZon8x519LVFZFDYJdaCk9iB3qamicviG3/ybwoB9V2ba3HL+dJVbw+mkD4HmNHCeq5uY+oI5YIIIDyGQkgyPlvZb4hd9CpUgbrqFOOOVahUxmpeuYeiduhl9q974ccU17FCbFgpyZBNxDP7sV3bVvOesqyOafUfYINdquUC8BbVPR8tIT94IyRuCmLuNDlrfuCGS+wIwR2wshOPlOQ6a/xcLQsOBhg3JswRNG3rJmW9af4outExCv6Kb0xgl/0xob8QGBsslKKCPkGAXyhMxaq8iKiQKBlKl6KVuvxXcRy57CS5q7Iur+k6PrYh4AqYjHlQuOsVnQIlZahpJXqqEevY85FLRp9+S0eDT6dywHgE2DBxIkzxoPFz+QRzgPCRzdv3lzS7ZSFSiUZbfg1JcMkoqfW659tRovc7XQksp5YA9cVbABiJc9NP2LWC6x/BImVfMeQ88CIL9Q/6Ay1t1nnHDinM9x2n1y9MXANyZwEOC0Zy9zH9+z9PtmoJZM6NCnbPmOcpSY01FNsvRmiobZfAEFy5UIvLXVg53tRjXeWL5VOP06cOLFaAN7Pebd02vfmdeTp+Q74ONHJKgyQIAJNq5QDOaHKUA5aIUdNkJzKiI26EXMhtIz/UEvguKpx9mvVPICqgxz8cJAc2EM/sJIZLP20Kf6PE8F5BPQoESmXOXHnuamUcv7+yisfsc6NqjwIeLXjYHvM5fbfNEEu61MIybnoWCh4q4JV8SS+6CrvEjZufOXd2Pq2gg+eBlJBo9qee8fCivh8SuzdUf0qR/NuiQRZ3iUJou+pMjsOOraBr7onJsi4BngeXCWjaZkIuO+99CDG7LOZ1GSKAHJezEpyAIbNQacKzHbUbJw5xxzb7xxzssbRcPt6dn7q5VqI0vlhUjJrj3Q9IjwfjQZfz+IMWdIu6BusjHqM+N38LOwnHFds9IWJk+tOVTAsSWy35WgRAY/nXvfA+KNsf3d5/U3HT59uPQK0LKHyGKdO/sSJ3JflSpRhNU4YdL66QPqvrVtX7VXz+qnmemein/dT+mPcjtNq3HUX91MAkm994m18Z/jzrkib+qFXegaL+IFGxn2J/wTAsZD14z7zcKSx9fEscl9y2B10qmS+Oq9CgNkyyDjk+U2cOuvodDbxvGx6utLj3NHVS+QQTqxx+87Ltt/p9Z0N/KCNnxQ/BGX6uVwzj2DszRckNkfWvtkdt/8HX0iM7OIQUdhtQl5IslmWaWNv94N8Asu3vCxlmHEYh7sOTYzZVOutu4LjbA7vR+EmLzJVNuNhidVwml/r4Qd5CLINM4rl8+ODHhTy4ptBt0r0GHgbOwrlagkh8F7OZ+OQ3BzwIF/MDeq2XnmQFNR7iYC7ee40T3P9HwBhrkynAuO9BYzEZyINLV9K0VTHRWMPFQAAEABJREFUEXPQKmOsaHYAVxZPeQudJVMxyWjI8TQ7rJy5WWkgP435sjxmBPONPnqN50Z/m0EfykSV7UZArEoINOcQ5VpkAFQ+zBJIV9fU+FIvsUChX2fnuveAjHogKrgGFnlELUA85vT4/2Q151movBHhC5xUw6NLvpjecmh8TAARPjecdtR66s7hKZU/cJnyQseH/g0Jv1rKCzybOgJbkOjRfg39MW6fk2s9PnNZqHOK/9PcZ84DwrtjsTX/6JeyjvHFYoy70DcrmM99ZaK1ltHEwRp38/xH3Evmv8DhdQSbfJ3/U9D3oxckhpGFLRPDdz79v31ki8iocNB8G1efZf+octAAq+I8NLWaSz6bR7N9ndPpnCXfvruAr7APcp35wPsh3sylcAQ3s/IXN64P9C0BI4EPqIvCcWIMZCwfU8v1U6OR9t8nUPwzn6Dv9VOtY4gwzQYUcHnqilqSZ61peDjsuG6xCbGCj99FxKlDWmqmssNcHl/fR474gvBdTscEit9g1tp1IFiXAPRHwwGL6apMxRmpnu4mzq9cZcBO4u6TpvgPRwE/4rusrph9z30ZefMk2MYqRMj5vkYuDUuaRstT5EizJnKfuBoRz+VwYroxfC4QAB5jGAmvZ9nc06CIH2NfhNQIinBnPJ0rluEcEEj51tIImlm46H09DxFBzmoMbkQkh+h7UIPVdB0i7O3ZFS/9JCtshSlhOI64AhAONwzKONE61695EYD6HLYp3LvjTvdVjgoORW9doTVB7O6eDHJtc5G5CMUjLq9/TpHiIybGjuohnoK6kc+4h9mxvVkuQxj3QwFxUSpw+haOy1eH+4tkx0zQM4kd8wyJeT+j+Ji54ghI/UAb8YiDBLwECB8nxOtLejBI8JFhwNmFAlv6Mof9YKMXenp6jkwAeQzAc/mcv5mDeWfKbYdcwTP44roYyNbFdxbtU5bOt/zeC8tCSSeczDCc4VR33TEA+CtEvnZD8scnxKZoqO25ZMp6Hw0FzA/opI7WksPDMW/7AZ5RlYYIV8p5TOYJPtmvI8CnNm9eW+Krv5y7uI2Lo68SUVdXJPjL7CyG1RNlhAm17rqSH4JFoy+/FQ0H/z8ZdA1faHtfpc0utT/NPdjGHfqJSZ6ZJ/RTKzBG9OfOcPDBWCjwpV0GuNlmeSs75IYyZn+VfZj24fHcN95XFsB3H5RwjFfySiC+Rzvv4Yup8tsV3GkmEUBrZyiwqgSVUjTecWfL7woF1q0sVyoY7sCYxwdTZrRpxfYNDa2RjoanfhVpbPkehwsA4V9ZL1ezXzNjepYgfNazpH5xPzUzVrEO2uU64zi+N/oDVyzjNgGB7uYqZFSU06NiQ0hYLKfBcePjY66qcdddxPU9jucDLaYaBl/NGn4oiYg1BChHz5StsTPkeIpP0rez6TLN+Qq+XCPlFIFikeCjsVDwVHZkl3Ghli9XyLyIMMYGtm/JeG6oPMrrHYH3E0ZCvnU5qBM7X83knK9BYPU9cbsQ8MyxbvdB+XQU4m2TH/sCarKSI4DnrXj7Bd0BVWY9CAq+6m3KlbALL2z5byA0n/fkZENotBpJixzhCiDUemfWUVV1BBGz3oSi56KhoOUSrgowPa8JcskdkPrFAIFwixB4LQGt5hHnn/MqGgSTy7iVbXhf9GyXX5dTaFoV5xNRzn/n8Lg9Zrm8dd4cRhpBfvS/1uO7KI2UHjVi4cCTsZDdZZDxNa5rvruEBZyxIvsn25Wzbexo7+SLz69zGENI6IwEfsllqKe+ePrhCDxk0Bf2jz6oemQITR5VqkTcdqg0mAA/ksehDrvsPffwnWu3Si8aqByQVNQJIB9EuDz+f0cSaxDg6PSK8Mnc/tEOx1ymEYdRu/EoyGLpHJ6KgGeTgfL18LLUb9JUvwcBZvMo/XCoOmKfq/fvwLKP7IiVnQX4R4R53jwEqEZxDF9sLO4UWIG5rYp3htvuw27jFCC4jzstz6yYjL4dIlTzxUD5CnqfUIVFCOln+Uyq5YFHzeRZg6rTdvrwJiJQvlqNiP/GmH0hnw2FeFu3QtnuAgqVPVA+33HmPNuRuthnCHksOtjoYFMWjV3mcYh3W25f8QGfe1ZTYadP/9G1juwiS6tAdu4hTDu9vm8cbIMtXAH5rx6ZdhH82tgDn9m6tfDC+yE0qSyqOiP2FTyFsE2pnOAtk69kFkXMK2Qj+CYB7eHyv1Uo8FWQHxgq1CHO711pomCmSHiS0+07K5WyOkaj7duj4QCPpFHpVMiAWqu8lUhPxBPr8tklyHYP2umIfDKFeOY0BMXlyyNqR0risZqpvuML6dnP+O+o6oME41R0KxoSjpc8NPAteSxH4AHSGyq9iCB63tmd89GkTEcII/dDwHu49MM4ZG5E3+eT+HPyE4mZjNGaklMIqJxCAKAfA6jfyR9sbSe6Z0xgpzwXCB6PhoN3FQqIqFxAjwA2cFDu2u1sAxEuySZZpTvDged5VPiTbL5h2KLZtEpOb9rwUhffDSinjlxyagjBFzd6Ng+2DrHIS69yX7lLqQfhcH7wNGqnAZV1KkAkQKWDBsSS5uR5JG5OqcYT8bL1O+7nNqvq9ADlrC2vGAedazT1kPxboeTf9OTcAufKjx5Kj0DlZ0gTApT0oahZFdpvQ0TBnbnA9EOytOj6NVF26H9MprL2Aq6TH8zJomYkEeG6GveZp2QQ8yQMxEwHTbC7a8OaDXmyVCLLkA9DVYYRiRv55Ny7ObL2byp+qTR+FrOM74aUfwaAAJ+s9dTJZZGlqh2d8sJYqzKc8Z4ATU1F+zhC/DQB7I42rSjnCLpWaSvQtlhjS873Woo2XqW0XDTZ8brj5IxF2h4eyjKGQxc3MJ8f+UtKvuVFGSMtHnk907U++HernAcnEgX1WuWVt7wE8gEkvMij1Y1Wctl0QuN72TSZZkOOqhp33HUybh1wnECHHMkV1ccEdL+drosQ5LrY0i7MxJeFdCVDEEcgrm6uIkK0HAllS7s8Pr6boCuYLlevEB9zNm5/JU58262kswLqjtu+CATK+VIEsdTprpsMpf6m71TWt5AaQTSgfCm9SDDg/JE7lgfYZ+RMG3JvGDPZ0VUUBpOXzKtjA6Zxez+dsinfUQAKFZ8ILPssl/H/ANEcpWfn5bLvzabJtLIQyRiRQPCGYUB9LBT85OYNbeqPW4+IYcUXyg/Ixkjp3nXNMmoRKPOJu0EWDw+T2RPVwtSbTGXvKbk8KJvcm7YZcDsiVLMT+HUvqahDLNT+HAHlXNVlZhJwe+FRNJ5V6/E1SvlCgcDW92lLttMwiCwfVFrpIoSxal5+fNR5TKrgE0qJLd+K5GkPM6+5c7r9cllhK6I8oUk6aJOeu0Pl7TjXybKc1zasfiNBhvLNS0T5vFY8bb41mluYJWXiB3YLDGUWQ4mF5LCdynwEYJlH5ksFQlLmZ37h/OxVETBjwMP5zI3b6XYzkmc3ZVn94QLwCe533UDxRXlE+1kIyvZi3EW/UFqsabbdhkK5Qoad+upwQ6vyJSG1sjS9ZY8SdXMZKxIG/Es0HDi5MxJo5fRo3s6Vxh+aqE57/15SMkM01BbiDrFGUvm4IdbRtlrGLUMPWD74sSEeaZWvxjvLxyeJOWfMnafg182y9BgAtDKLZiYR4GOOg45Vr+s0JZI7lmtyeuvuP/nk2ZaO5pTJM44VhH1/3cQn6/Vdpf47+fTpDgA4hoNiw6MUxIKkUyd/wvJlGRIwJY8CdHn9c1xe33p2y4+j6ZxZGsFy0IEIJ7FE7kZ05ASLT7NK4a5I288I6HEZVwQXOA7/dwXdkiTGCst+JkhY9jMElJ8oyNWLVF3znfMLfseFR9DH5WZmCsJRvC+4hU/raWAcch5sIz/U9iyZ39e3shVNXjz3VJEgniLBUxDosnDjiqKmoLisjPczUnoJ0OlqmpNxUXEvWXCWx368/O62YokqvRO391wKFr9+B20hUC4yV/BRgsSF3bvjR0dDgUu6IgE5umOHUK4Sy6/X5am7EQA9wD/usPcXmoPlUaI5hYAAeUfPzql1/yTs2MBqlRsB3OhyzcxeHWCTX4kTYPwP9joIBLzGmVxdgUpFWUT5JieSqMki9yVZ761Od535IZ0+YlaEZRBB3Dzu0J71tZ66c47Nepmixl33z2Pt9nWAKJ3rDgOMaztDbcqRBlj8ZN1d8bHLuFI2pQhC/WmTz3IqeRZEWfcqW+IuCzYg4GXshJ9x9X4no9bra3Z6fMvZKa/jIKcdngHAjBOS+7xyBC0/4clt+G+g+CGiOORI0axg9ZG2Gzu/zKMw5dI7QLzR6fU9Ult7pqVzTSniC9KJdpvtW6l0zhHp+hw9TU1iyuL6TwMQT+Pk5AAExOqeg5fkcpIU972XHuReMl++vq7+NgXhDM/iueckpfPsL1mRIIEXsh0v5Egh3uZZMn+jp7n+254l9ZdOWVL/hSnN9be6m+t/LtC2kRAmIsAV4cblRU1vuJfOmwGEn88phwms5+N2u+NF95L6Zi7rvzzN87sQqR0QzmR238Z9YR8PzB4xBNZEb19h+UnhEXPQsVDwmliofWUZX2nuA6OckUlTZtY6vf5VfBK8CyhMh5ssDyfaRNUWl8cfYL6ci02S0/Zy9MPJ6Hu080k+5myc78dOj68TSWzlhr8gR6CXgIink0NsZXm2w2++iuvy+joFiMcQcHyvmDy4UGA727rb6fE/Lwmq4HL77nB5/K9VC7GNO9ZnVTIpGgrxA6fX/47TOyPrBKNl0L3vY+w4LuLO+AQ7oBMEit8cKcbv4rK3sA0vuzy+92xC/B4ATwKCx7oRJ5XinJ3eutucHt+rXHfGHizXZ0sMHHZb2JVsi1Uuz8ypYPFzevzf5hCRdWdclU4zLesc6P1OhgBcyPJzAfAMDsrlXUSYsYKDcVvl9PjawQGbOK/laJ15t7Lcm6a815+zumZbJLIbITGPT3iGGXJ+XP+rsbrqb7XeumuymS63f4bU6/L6/1xtN6SjmJMt05/GiVjt+IspP2v2S+6Fc7a6HRt3CAG/BcCM9xYg7YcIN7mb619jBxnw9I5mOT3PvWT+y9ideB8RLR9cIwIP3MWvOd+rMv8Udq5g8eu4o+V9nir4PM+PyU+wZq6IQJT985uA8IRAWCkA7uOH4NLJPgVguMONLcpzMFWUd9m8k2X5HNaDIdrYLss7QuadxWEhl7UAAPv+25Eb500u81kDjK+Inj3HRRpbr5U2Q54f25mHq1kFEZBvkMVCgdmxUPCoaNb3P8x0OOCPhQL1VopY5nR5gqn4nO/aWDhYyzIZ3xVRpVluPMuzHYHZUlc0FDwtqrKHabFQcFwsHJCdU4rmhGgkuIynm061yp9Nj4UCR8dCazdJRfvIeBvIuCoaCi6U3+Hgcp6NhYKXY8/7R5EBlwNQC3fc14HwLe6w9xMYn4fuxJFc3lXJh6dSS3EhFmq7JxYOTuMgolyv/CFYxWXItpgdDbdb/kN6LBy4nYM7v0HYRz8AAAJ+SURBVK7M77wUK5s9bROT/SYcnBkNB6sL6YiFgxNM+VBA+VXEaLh9XSwctMQhFg6M6VTcmUQjgbVSL5d/Ooei+1l0zaqzIktXnBxpaBkfbmjBQoHlTmUZf7ix9ZuydTm9nB3UGUyr4pA3f6ShVXC+aSzn72hsMT88JHWkhYxox52tj4UXtpxgIM0mgqXM/CkQPM/97fdA9BjTGoCMeRC3nxhpbLks0vB0wdVCoTuWb5Xlc5jKeWx8xFJDpKHlRK7HRR0Nyx8KNa3cwXYV3LSDLgiRFigFgb9sWLstGm57LDtPNBrtjkUCT0RDwQXSIcTCgfNi4eDiWKjthWi0fXu2vE5rBAaFAE8odyxsfZGdaQM70ivDjS3nsYP8dLix9SqmLZXTGZGmJzNWDg2qvDJl1g66TMBqtRoBjYBGYLAIaAc9WAR1fo1AhSOgzRu9CGgHPXrbTluuEdAI7OcIaAe9nzewrp5GQCMwehHQDnr0tp22fCgQ0Do0AhWMgHbQFdw42jSNgEbgwEZAO+gDu/117TUCGoEKRkA76ApunJE3TVugEdAIjCQC2kGPJPq6bI2ARkAjkAcB7aDzgKNZGgGNgEZgJBHQDnrg6OucGgGNgEagrAhoB11WeLVyjYBGQCMwcAS0gx44djqnRkAjoBEoKwJlc9BltVor1whoBDQCBwAC2kEfAI2sq6gR0AiMTgS0gx6d7aat1ghoBMqGQOUo1g66ctpCW6IR0AhoBDIQ0A46Aw6d0AhoBDQClYOAdtCV0xbaEo3AaEBA2ziMCGgHPYxg66I0AhoBjUApCGgHXQpaWlYjoBHQCAwjAtpBDyPYuqj9HwFdQ43AUCLwfwAAAP//qkJ9UQAAAAZJREFUAwBMMDhznVj1BgAAAABJRU5ErkJggg=="/>
 </div>
 <!-- Form -->
-<form class="flex flex-col gap-md" onsubmit="return false;">
-<!-- Username -->
-<div class="flex flex-col gap-xs">
-<label class="text-label-sm font-label-sm text-[#9ca3af] uppercase tracking-wider" for="username">
-                        Username
-                    </label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
-<input class="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-outline-variant" id="username" placeholder="Enter your identifier" type="text"/>
+<form action="#" class="w-full space-y-md" onsubmit="event.preventDefault();">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="username">
+                            Username or email
+                        </label>
+<input class="w-full px-sm py-sm bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:border-primary-container transition-all" id="username" type="text" value="johnsmith007"/>
 </div>
-</div>
-<!-- Password -->
-<div class="flex flex-col gap-xs">
-<div class="flex justify-between items-end">
-<label class="text-label-sm font-label-sm text-[#9ca3af] uppercase tracking-wider" for="password">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">
                             Password
                         </label>
-<a class="text-label-sm font-label-sm text-primary hover:text-white transition-colors" href="#">
-                            Forgot password?
-                        </a>
-</div>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
-<input class="input-field w-full py-md pl-[44px] pr-md rounded-lg text-white font-label-md text-label-md placeholder:text-outline-variant" id="password" placeholder="••••••••" type="password"/>
+<input class="w-full px-sm py-sm bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:border-primary-container transition-all" id="password" type="password" value="********"/>
+<div class="flex justify-end mt-xs">
+<a class="font-label-sm text-label-sm text-[#2f855a] hover:underline transition-all" href="#">
+                                Forgot password?
+                            </a>
 </div>
 </div>
-<!-- Sign In CTA -->
-<button class="primary-button w-full py-md mt-sm rounded-lg text-white font-label-md text-label-md font-bold uppercase tracking-widest active:scale-[0.98]" type="submit">
-                    Sign In
-                </button>
-</form>
-<!-- Divider -->
-<div class="flex items-center gap-md py-xs">
-<div class="h-[1px] flex-grow bg-surface-variant"></div>
-<span class="text-label-sm font-label-sm text-outline-variant">OR</span>
-<div class="h-[1px] flex-grow bg-surface-variant"></div>
+<button class="w-full bg-[#2a303c] text-on-primary py-sm rounded-lg font-label-md text-label-md hover:bg-primary transition-all active:scale-95 shadow-sm" type="submit">
+                        Sign in
+                    </button>
+<!-- Separator -->
+<div class="flex items-center gap-sm my-md">
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-xs">or</span>
+<div class="flex-1 h-[1px] bg-outline-variant"></div>
 </div>
-<!-- Social Auth -->
-<button class="secondary-button w-full py-md rounded-lg text-white font-label-md text-label-md flex items-center justify-center gap-md group">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
-<path d="M17.64 9.20455C17.64 8.56636 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z" fill="#4285F4"></path>
-<path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"></path>
-<path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957275C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"></path>
-<path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"></path>
+<!-- Social Login -->
+<button class="w-full flex items-center justify-center gap-sm bg-surface-container-lowest border border-outline-variant text-on-surface-variant py-sm rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-all active:scale-95" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
 </svg>
-<span>Continue with Google</span>
-</button>
-<!-- Sign Up Footer -->
-<div class="text-center pt-md border-t border-surface-variant/30">
-<p class="text-body-md font-body-md text-on-surface-variant">
-                    Don't have an account? 
-                    <a class="text-primary hover:underline ml-xs" href="#">Sign up</a>
+                        Sign in with Google
+                    </button>
+</form>
+<p class="mt-xl font-label-md text-label-md text-on-surface-variant">
+                    Are you new? 
+                    <a class="text-[#2f855a] font-bold hover:underline ml-xs transition-all" href="#">
+                        Create an Account
+                    </a>
 </p>
 </div>
-</div>
+</section>
 </main>
-<!-- Footer (Shell Logic: Suppression for task-focused page, but following Footer Anchor for branding) -->
-<footer class="w-full py-xl flex flex-col items-center gap-base opacity-60">
-<div class="flex gap-lg">
-<a class="text-label-sm font-label-sm text-on-secondary-fixed-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
-<a class="text-label-sm font-label-sm text-on-secondary-fixed-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
-<a class="text-label-sm font-label-sm text-on-secondary-fixed-variant hover:text-on-surface transition-colors" href="#">Contact Support</a>
-</div>
-<p class="text-label-sm font-label-sm text-on-secondary-fixed-variant mt-sm">© 2024 Prompt Helper. All rights reserved.</p>
+<footer class="fixed bottom-0 left-0 w-full md:w-1/2 p-gutter pointer-events-none md:block hidden">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-50">
+            © 2024 Mastery Hub. All rights reserved.
+        </p>
 </footer>
-<!-- Micro-interactions Script -->
 <script>
-        // Subtle input focus animations or form handling could go here
-        document.querySelectorAll('.input-field').forEach(input => {
-            input.addEventListener('focus', () => {
-                input.parentElement.querySelector('.material-symbols-outlined').style.color = '#8b5cf6';
-            });
-            input.addEventListener('blur', () => {
-                input.parentElement.querySelector('.material-symbols-outlined').style.color = '';
-            });
-        });
+        // Simple micro-interaction for the left background
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('floaty-elements');
+            if (!container) return;
 
-        // Basic button scale effect
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(btn => {
-            btn.addEventListener('mousedown', () => btn.style.transform = 'scale(0.98)');
-            btn.addEventListener('mouseup', () => btn.style.transform = '');
-            btn.addEventListener('mouseleave', () => btn.style.transform = '');
+            const symbols = ['π', 'Σ', '√', '∫', 'Δ'];
+            for (let i = 0; i < 15; i++) {
+                const span = document.createElement('span');
+                span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                span.className = 'absolute text-2xl font-display-logo transition-all duration-1000 ease-in-out';
+                span.style.left = Math.random() * 100 + '%';
+                span.style.top = Math.random() * 100 + '%';
+                span.style.color = '#2f855a';
+                span.style.opacity = '0.2';
+                container.appendChild(span);
+                
+                // Random floating animation
+                setInterval(() => {
+                    span.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+                }, 2000 + Math.random() * 3000);
+            }
         });
     </script>
 </body></html>

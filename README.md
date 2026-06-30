@@ -39,17 +39,38 @@ The backend handles API requests, authentication, and communication with the LLM
 
 3. **Install Dependencies:**
    ```bash
-   pip install fastapi uvicorn motor
+   pip install -r Backend/requirements.txt
    ```
 
 4. **Run the Backend Server:**
    ```bash
    cd Backend
-   uvicorn Authentication:app --reload
+   uvicorn main:app --reload
    ```
    The backend API will be available at `http://127.0.0.1:8000`. You can view the Swagger UI API documentation at `http://127.0.0.1:8000/docs`.
 
-### 2. Frontend Setup
+   *Note: If you encounter an error like `[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions`, it means port 8000 is already in use by another application. You can fix this by specifying a different port:*
+   ```bash
+   uvicorn main:app --reload --port 8080
+   ```
+
+### 2. Database & Test Account Setup
+
+The backend requires a MongoDB database to handle user authentication and store prompt history.
+
+1. **Start MongoDB:** Ensure you have a local MongoDB instance running on the default port (`localhost:27017`), or update the connection string in the backend if you are using MongoDB Atlas. The database will automatically be created on the first connection.
+2. **Create a Test Account:** You can create a test account to log in to the Home page by sending a POST request to the registration endpoint.
+   - Using PowerShell:
+     ```powershell
+     Invoke-RestMethod -Uri "http://127.0.0.1:8000/auth/register" -Method Post -ContentType "application/json" -Body '{"username":"testing1","password":"yln321"}'
+     ```
+   - Using curl (macOS/Linux):
+     ```bash
+     curl -X POST "http://127.0.0.1:8000/auth/register" -H "Content-Type: application/json" -d '{"username":"testing1","password":"yln321"}'
+     ```
+3. **Log In:** You can now go to the Frontend login page and sign in using the credentials `testing1` and `yln321`.
+
+### 3. Frontend Setup
 
 The frontend provides the user interface for interacting with the Prompting Helper application, built with React and Vite.
 

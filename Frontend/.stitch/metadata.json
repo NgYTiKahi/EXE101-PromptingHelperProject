@@ -1,0 +1,33 @@
+{
+  "name": "projects/5026075701386130772",
+  "projectId": "5026075701386130772",
+  "title": "Prompting Helper Home UI",
+  "deviceType": "DESKTOP",
+  "designTheme": {
+    "colorMode": "LIGHT",
+    "font": "INTER",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#000000"
+  },
+  "screens": {
+    "home": {
+      "id": "7a03978370324a4eba38732f21543506",
+      "sourceScreen": "projects/5026075701386130772/screens/7a03978370324a4eba38732f21543506",
+      "x": 0,
+      "y": 0,
+      "width": 2560,
+      "height": 2048
+    },
+    "login": {
+      "id": "bec48f2cb7e2481ab74b1c84a2e91b9d",
+      "sourceScreen": "projects/5026075701386130772/screens/bec48f2cb7e2481ab74b1c84a2e91b9d",
+      "x": 2600,
+      "y": 0,
+      "width": 2560,
+      "height": 2048
+    }
+  },
+  "metadata": {
+    "userRole": "OWNER"
+  }
+}

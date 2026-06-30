@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Chat - Prompting Helper</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f9f9f9",
+                    "on-primary-fixed": "#1b1b1b",
+                    "secondary": "#585f6c",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-surface-variant": "#4c4546",
+                    "outline-variant": "#cfc4c5",
+                    "tertiary": "#000000",
+                    "secondary-fixed": "#dce2f3",
+                    "secondary-container": "#dce2f3",
+                    "on-tertiary-container": "#848484",
+                    "error": "#ba1a1a",
+                    "outline": "#7e7576",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-container": "#848484",
+                    "on-surface": "#1b1b1b",
+                    "primary": "#000000",
+                    "primary-container": "#1b1b1b",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dadada",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary-container": "#1b1b1b",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-secondary-fixed-variant": "#404754",
+                    "surface-container-highest": "#e2e2e2",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-container": "#5e6572",
+                    "inverse-surface": "#303030",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#5e5e5e",
+                    "primary-fixed": "#e2e2e2",
+                    "on-secondary-fixed": "#151c27",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "on-background": "#1b1b1b",
+                    "inverse-primary": "#c6c6c6",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary-fixed": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "max-width-content": "800px",
+                    "lg": "40px",
+                    "xs": "8px",
+                    "md": "24px",
+                    "base": "4px",
+                    "xl": "64px",
+                    "sm": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "body-md": ["Inter"],
+                    "code": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "code": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* Minimalist scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col items-center py-md bg-surface-container-low dark:bg-surface-container-low h-screen w-16 border-r border-outline-variant dark:border-outline-variant">
+<div class="mb-xl flex flex-col items-center gap-md">
+<span class="material-symbols-outlined font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary" data-icon="chat">chat</span>
+</div>
+<nav class="flex flex-col gap-sm flex-1">
+<button class="flex flex-col items-center justify-center w-12 h-12 text-primary dark:text-primary bg-surface-container-high rounded-lg hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95" title="Chat">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-body-sm text-[10px] mt-0.5">Chat</span>
+</button>
+<button class="flex flex-col items-center justify-center w-12 h-12 text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95" title="Folders">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+<span class="font-body-sm text-[10px] mt-0.5">Folders</span>
+</button>
+</nav>
+<div class="mt-auto">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</aside>
+<!-- TopNavBar Component -->
+<header class="fixed top-0 right-0 left-16 z-30 bg-transparent">
+<div class="flex justify-end items-center w-full px-md py-sm max-w-content mx-auto gap-md">
+<div class="flex items-center gap-md">
+<button class="px-md py-xs rounded-full border border-outline font-label-bold text-label-bold text-primary hover:opacity-80 transition-opacity duration-200">
+                    Get Pro
+                </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant hover:opacity-80 transition-opacity duration-200 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist portrait of a modern digital professional with soft studio lighting. The background is a solid light gray, maintaining a high-key aesthetic that fits into a white-themed UI. The subject has a calm, intelligent expression, conveying reliability and modern tech-savviness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRIXXK-GnkQd-fuAj6B3thOJ0-tujLJ9jqVdkpq7_FrT_HavNmUQOV4rnTk96mUPPnzSQQdKXJCTpYk1vJL94xc9oH2gC--u9EkCBb6LVr9V1r8okPilKLDbU1uxTRKsxkbz2k0o4lOqUca-hIo5RnEZ3cE6nl50SYCww1QNNZA870nLn2ut2GYQd-ZIfHC1P8TFaXLBOlPwa-lDnlZNVF_B4qylUe3P8V7tdxJX7GEMAb4O_LqvngJp-Peha46paO8rPPiC4La98"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-16 min-h-screen flex flex-col items-center justify-center px-md pb-xl">
+<div class="w-full max-w-max-width-content text-center space-y-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Hero Heading -->
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">
+                What can I help with?
+            </h1>
+<!-- Input Container -->
+<div class="relative w-full group">
+<div class="bg-surface-container rounded-3xl p-md border border-outline-variant shadow-sm transition-all duration-300 focus-within:shadow-md focus-within:border-outline">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-md text-body-md text-on-surface placeholder-on-surface-variant h-32 leading-relaxed" placeholder="Ask anything" spellcheck="false"></textarea>
+<!-- Utility Bar -->
+<div class="flex items-center justify-between mt-sm">
+<!-- Left Utilities -->
+<div class="flex items-center gap-xs">
+<button class="flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-highest hover:bg-surface-dim transition-colors text-on-surface font-body-sm text-body-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="search">search</span>
+<span>Deep Search</span>
+</button>
+<button class="flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-highest hover:bg-surface-dim transition-colors text-on-surface font-body-sm text-body-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="psychology">psychology</span>
+<span>Reason</span>
+</button>
+</div>
+<!-- Send Button -->
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded-full hover:opacity-90 active:scale-90 transition-all shadow-lg">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+<!-- Suggestions / Contextual Chips (Optional Design Polish) -->
+<div class="flex flex-wrap justify-center gap-xs mt-lg opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="px-sm py-base rounded-full border border-outline-variant text-on-surface-variant font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+                        Draft a cover letter
+                    </div>
+<div class="px-sm py-base rounded-full border border-outline-variant text-on-surface-variant font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+                        Explain quantum physics
+                    </div>
+<div class="px-sm py-base rounded-full border border-outline-variant text-on-surface-variant font-body-sm text-body-sm cursor-pointer hover:bg-surface-container transition-colors">
+                        Debug this React code
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="fixed bottom-0 left-16 right-0 w-[calc(100%-4rem)] pb-base flex justify-center text-center px-md z-20">
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant pb-md opacity-60">
+            AI can make mistakes. Please double-check responses.
+        </p>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        // Simple textarea auto-resize and basic interactions
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            const newHeight = Math.min(this.scrollHeight, 240);
+            this.style.height = (newHeight > 128 ? newHeight : 128) + 'px';
+        });
+
+        // Focus ring effect simulation on outer container
+        const container = textarea.parentElement;
+        textarea.addEventListener('focus', () => {
+            container.classList.add('ring-1', 'ring-outline');
+        });
+        textarea.addEventListener('blur', () => {
+            container.classList.remove('ring-1', 'ring-outline');
+        });
+    </script>
+</body></html>
