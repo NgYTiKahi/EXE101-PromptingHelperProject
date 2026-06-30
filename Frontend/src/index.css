@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-background min-h-screen selection:bg-primary/30;
+    font-family: 'Geist', sans-serif;
+  }
+}
+
+@layer components {
+  .login-card {
+    @apply bg-surface border border-outline-variant shadow-[0_0_20px_rgba(139,92,246,0.15)];
+  }
+
+  .input-field {
+    @apply bg-surface border border-outline-variant transition-all duration-200;
+  }
+
+  .input-field:focus {
+    @apply outline-none border-[#8b5cf6] shadow-[inset_0_0_4px_rgba(139,92,246,0.2)];
+  }
+
+  .primary-button {
+    @apply bg-[#8b5cf6] transition-all duration-200 ease-[cubic-bezier(0.4,0,0.2,1)];
+  }
+
+  .primary-button:hover {
+    @apply shadow-[0_0_15px_rgba(139,92,246,0.4)] brightness-110 -translate-y-[1px];
+  }
+
+  .secondary-button {
+    @apply bg-transparent border border-outline-variant transition-colors duration-200;
+  }
+
+  .secondary-button:hover {
+    @apply bg-outline-variant;
+  }
+}
